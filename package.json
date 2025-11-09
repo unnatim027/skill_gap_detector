@@ -1,0 +1,17 @@
+{
+  "name": "skill_gap_detector",
+  "version": "1.0.0",
+  "description": "Skill Gap Detector backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skill Gap Detector — Stylest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#6B46FF">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-glow"></div>
+        <div class="brand-text">
+          <span class="brand-title">Skill Gap</span>
+          <span class="brand-sub">Detector</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <aside class="hero">
+        <h1>Know what's missing. Level up faster.</h1>
+        <p class="lead">Compare your skills with job roles, get missing skills and curated recommendations — fast.</p>
+        <div class="role-showcase" id="roleShowcase">
+          <!-- role badges injected here -->
+        </div>
+      </aside>
+
+      <section class="panel">
+        <div class="card">
+          <div class="card-head">
+            <h2>Analyze Skills</h2>
+            <div class="sub">Pick a role, add your skills, get suggestions</div>
+          </div>
+
+          <div class="form">
+            <label class="field-label">Select Job Role</label>
+            <div class="select-wrap">
+              <select id="roleSelect" class="select">
+                <option>Loading roles...</option>
+              </select>
+              <div id="roleLoading" class="skeleton tiny hidden"></div>
+            </div>
+
+            <label class="field-label">Your skills</label>
+            <div class="chips-input" id="chipsInput" tabindex="0">
+              <input id="skillsInput" placeholder="Type a skill and press Enter" />
+            </div>
+            <div class="hint">Tip: press Enter or Comma to create skill chips. Use Auto-fill for a role's expected skills.</div>
+
+            <div class="controls">
+              <button id="autoFillBtn" class="btn ghost">Auto-fill from role</button>
+              <div class="spacer"></div>
+              <button id="checkBtn" class="btn primary">Check Skill Gap</button>
+            </div>
+
+            <div id="resultArea" class="result-area hidden">
+              <div class="result-card">
+                <div class="result-header">
+                  <div>
+                    <div class="result-title">Missing Skills</div>
+                    <div class="result-sub" id="missingCount">0 skills</div>
+                  </div>
+                  <div class="badge" id="matchBadge">0% match</div>
+                </div>
+
+                <div id="missingList" class="missing-list">
+                  <!-- missing skills rendered here -->
+                </div>
+
+                <div class="recommendations">
+                  <div class="rec-title">Recommendations</div>
+                  <ul id="recommendationsList"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div id="toast" class="toast hidden"></div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <small>Built with ❤️ • Frontend demo</small>
+        </footer>
+      </section>
+   
+ </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
